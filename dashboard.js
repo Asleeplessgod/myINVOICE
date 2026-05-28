@@ -347,20 +347,49 @@ function showPreview() {
 }
 
 
-// ---- PDF DOWNLOAD ----
+// ---- PDF DOWNLOAD ---
 
 document.getElementById('downloadBtn').addEventListener('click', function () {
   const content = document.getElementById('previewContent')
 
-  const options = {
-    margin: 10,
-    filename: document.getElementById('invoiceNumber').value + '.pdf',
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  if (!content.innerHTML.trim()) {
+    alert('Nothing to download. Please fill in the invoice first.')
+    return
   }
 
-  html2pdf().set(options).from(content).save()
+  // Clone the content and apply inline styles so PDF renders correctly
+  const clone = content.cloneNode(true)
+  clone.style.padding = '30px'
+  clone.style.fontFamily = 'Arial, sans-serif'
+  clone.style.fontSize = '14px'
+  clone.style.color = '#333'
+  clone.style.backgroundColor = '#ffffff'
+  clone.style.width = '700px'
+
+  // Style all text inside clone to be visible
+  clone.querySelectorAll('*').forEach(function (el) {
+    el.style.color = el.style.color || '#333'
+  })
+
+  const invoiceNum = document.getElementById('invoiceNumber').value || 'invoice'
+
+  const options = {
+    margin: 10,
+    filename: invoiceNum + '.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#ffffff'
+    },
+    jsPDF: {
+      unit: 'mm',
+      format: 'a4',
+      orientation: 'portrait'
+    }
+  }
+
+  html2pdf().set(options).from(clone).save()
 })
 
 
