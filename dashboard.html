@@ -8,7 +8,6 @@
   </head>
   <body>
     <div class="dashboard">
-
       <!-- SIDEBAR -->
       <aside class="sidebar">
         <div class="sidebar-logo">
@@ -29,15 +28,16 @@
 
       <!-- MAIN CONTENT -->
       <main class="dashboard-main">
-
         <!-- CREATE INVOICE VIEW -->
         <section class="view active" id="view-create">
           <h2 class="page-title">Create invoice</h2>
 
           <div class="form-card">
-
             <p class="section-label">Company logo</p>
-            <div class="logo-upload" onclick="document.getElementById('companyLogo').click()">
+            <div
+              class="logo-upload"
+              onclick="document.getElementById('companyLogo').click()"
+            >
               <input type="file" accept="image/*" id="companyLogo" hidden />
               <p>Click to upload your logo</p>
             </div>
@@ -46,7 +46,11 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="bizName">Business name</label>
-                <input type="text" id="bizName" placeholder="e.g. Asleeplessgod Studio" />
+                <input
+                  type="text"
+                  id="bizName"
+                  placeholder="e.g. Asleeplessgod Studio"
+                />
               </div>
               <div class="form-group">
                 <label for="bizEmail">Email</label>
@@ -55,18 +59,29 @@
             </div>
             <div class="form-group">
               <label for="bizAddress">Address</label>
-              <textarea id="bizAddress" placeholder="Street, City, State"></textarea>
+              <textarea
+                id="bizAddress"
+                placeholder="Street, City, State"
+              ></textarea>
             </div>
 
             <p class="section-label">Client details</p>
             <div class="form-row">
               <div class="form-group">
                 <label for="clientName">Client name</label>
-                <input type="text" id="clientName" placeholder="Client full name" />
+                <input
+                  type="text"
+                  id="clientName"
+                  placeholder="Client full name"
+                />
               </div>
               <div class="form-group">
                 <label for="clientEmail">Client email</label>
-                <input type="email" id="clientEmail" placeholder="client@email.com" />
+                <input
+                  type="email"
+                  id="clientEmail"
+                  placeholder="client@email.com"
+                />
               </div>
             </div>
 
@@ -95,9 +110,13 @@
               </thead>
               <tbody id="items-body">
                 <tr>
-                  <td><input type="text" placeholder="Service or product" /></td>
+                  <td>
+                    <input type="text" placeholder="Service or product" />
+                  </td>
                   <td><input type="number" value="1" min="1" /></td>
-                  <td><input type="number" value="0" min="0" placeholder="0.00" /></td>
+                  <td>
+                    <input type="number" value="0" min="0" placeholder="0.00" />
+                  </td>
                   <td class="row-total">₦0</td>
                   <td><button class="del-btn">✕</button></td>
                 </tr>
@@ -108,7 +127,9 @@
 
             <div class="totals">
               <div>Subtotal: <strong id="subtotal">₦0</strong></div>
-              <div class="grand-total">Total: <strong id="total">₦0</strong></div>
+              <div class="grand-total">
+                Total: <strong id="total">₦0</strong>
+              </div>
             </div>
 
             <div class="action-row">
@@ -116,7 +137,6 @@
               <button class="btn-preview">Preview</button>
               <button class="btn-primary">Send invoice</button>
             </div>
-
           </div>
         </section>
 
@@ -141,8 +161,12 @@
 
           <div class="sort-row">
             <span>Sort by:</span>
-            <button class="sort-btn active" onclick="sortInvoices('date')">Date</button>
-            <button class="sort-btn" onclick="sortInvoices('amount')">Amount</button>
+            <button class="sort-btn active" onclick="sortInvoices('date')">
+              Date
+            </button>
+            <button class="sort-btn" onclick="sortInvoices('amount')">
+              Amount
+            </button>
           </div>
 
           <div class="invoice-list-card">
@@ -157,7 +181,6 @@
               <p class="empty-state">No invoices yet. Create your first one.</p>
             </div>
           </div>
-
         </section>
 
         <!-- SETTINGS VIEW -->
@@ -165,28 +188,43 @@
           <h2 class="page-title">Settings</h2>
 
           <div class="form-card">
-
             <p class="section-label">Business profile</p>
             <div class="form-row">
               <div class="form-group">
                 <label for="settingBizName">Business name</label>
-                <input type="text" id="settingBizName" placeholder="e.g. Asleeplessgod Studio">
+                <input
+                  type="text"
+                  id="settingBizName"
+                  placeholder="e.g. Asleeplessgod Studio"
+                />
               </div>
               <div class="form-group">
                 <label for="settingBizEmail">Email</label>
-                <input type="email" id="settingBizEmail" placeholder="you@email.com">
+                <input
+                  type="email"
+                  id="settingBizEmail"
+                  placeholder="you@email.com"
+                />
               </div>
             </div>
             <div class="form-group">
               <label for="settingBizAddress">Address</label>
-              <textarea id="settingBizAddress" placeholder="Street, City, State"></textarea>
+              <textarea
+                id="settingBizAddress"
+                placeholder="Street, City, State"
+              ></textarea>
             </div>
 
             <p class="section-label">Invoice preferences</p>
             <div class="form-row">
               <div class="form-group">
                 <label for="settingPrefix">Invoice number prefix</label>
-                <input type="text" id="settingPrefix" placeholder="e.g. INV, BILL, RCP" maxlength="6">
+                <input
+                  type="text"
+                  id="settingPrefix"
+                  placeholder="e.g. INV, BILL, RCP"
+                  maxlength="6"
+                />
               </div>
               <div class="form-group">
                 <label for="settingCurrency">Default currency</label>
@@ -203,7 +241,14 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="settingTax">Tax rate (%)</label>
-                <input type="number" id="settingTax" placeholder="0" min="0" max="100" value="0">
+                <input
+                  type="number"
+                  id="settingTax"
+                  placeholder="0"
+                  min="0"
+                  max="100"
+                  value="0"
+                />
               </div>
               <div class="form-group">
                 <label>Tax preview</label>
@@ -212,12 +257,12 @@
             </div>
 
             <div class="action-row">
-              <button class="btn-primary" id="saveSettingsBtn">Save settings</button>
+              <button class="btn-primary" id="saveSettingsBtn">
+                Save settings
+              </button>
             </div>
-
           </div>
         </section>
-
       </main>
     </div>
 

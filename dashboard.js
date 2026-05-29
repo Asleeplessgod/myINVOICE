@@ -16,8 +16,7 @@ function attachLogoListener() {
 
 attachLogoListener()
 
-
-// ---- ITEMS TABLE ----
+// ITEMS TABLE
 
 document.querySelector('.add-item-btn').addEventListener('click', function () {
   const tbody = document.getElementById('items-body')
@@ -65,7 +64,7 @@ function attachRowListeners(row) {
 attachRowListeners(document.querySelector('#items-body tr'))
 
 
-// ---- SIDEBAR NAVIGATION ----
+// SIDEBAR NAVIGATION 
 
 document.querySelectorAll('.nav-item[data-view]').forEach(function (link) {
   link.addEventListener('click', function (e) {
@@ -84,7 +83,7 @@ document.querySelectorAll('.nav-item[data-view]').forEach(function (link) {
 })
 
 
-// ---- INVOICES LIST ----
+//  INVOICES LIST
 
 let invoices = []
 let editingIndex = null
@@ -261,7 +260,7 @@ function sortInvoices(type) {
 }
 
 
-// ---- INVOICE PREVIEW ----
+//  INVOICE PREVIEW 
 
 document.querySelector('.btn-preview').addEventListener('click', function () {
   showPreview()
@@ -347,7 +346,7 @@ function showPreview() {
 }
 
 
-// ---- PDF DOWNLOAD ---
+// PDF DOWNLOAD
 
 document.getElementById('downloadBtn').addEventListener('click', function () {
   const content = document.getElementById('previewContent')
@@ -393,7 +392,7 @@ document.getElementById('downloadBtn').addEventListener('click', function () {
 })
 
 
-// ---- SETTINGS ----
+// SETTINGS
 
 let settings = {
   bizName: '',
